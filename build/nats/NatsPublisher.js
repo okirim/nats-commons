@@ -8,7 +8,7 @@ var NatsPublisher = /** @class */ (function () {
     }
     NatsPublisher.prototype.publish = function (data) {
         var _this = this;
-        var string_codec = nats_1.StringCodec();
+        var string_codec = (0, nats_1.StringCodec)();
         //const requestOptions:RequestOptions ={}
         return new Promise(function (resolve, reject) {
             _this.client.publish(_this.subject, string_codec.encode(data));

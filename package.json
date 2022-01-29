@@ -1,5 +1,5 @@
 {
-  "name": "@okirim/commons-nats",
+  "name": "@lamaii/commons-nats",
   "version": "1.0.4",
   "description": "",
   "main": "./build/index.js",
@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "del-cli ./build/*",
     "build": "npm run clean && tsc",
-    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish --access public"
+    "pub": "npm version patch && npm run build && npm publish --access public"
   },
   "keywords": [],
   "author": "",

@@ -18,12 +18,12 @@ var Nats = /** @class */ (function () {
     });
     Nats.prototype.connect = function () {
         var _this = this;
-        this.client = nats_1.connect({ servers: this.servers })
+        this.client = (0, nats_1.connect)({ servers: this.servers })
             .then(function (nats) {
             _this.client = nats;
             console.log('nats is connected');
         })
-            .catch(function (error) { return console.log("error connecting to " + JSON.stringify(_this.servers), error); });
+            .catch(function (error) { return console.log("error connecting to ".concat(JSON.stringify(_this.servers)), error); });
         return this;
     };
     Nats.prototype.close = function () {

@@ -11,7 +11,7 @@ var NatsListener = /** @class */ (function () {
         return this.subscription;
     };
     NatsListener.prototype.parseMessage = function (msg) {
-        var string_codec = nats_1.StringCodec();
+        var string_codec = (0, nats_1.StringCodec)();
         var data = string_codec.decode(msg.data);
         return data;
     };

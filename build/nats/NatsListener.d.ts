@@ -14,4 +14,3 @@ export declare abstract class NatsListener<T extends Event> {
     parseMessage(msg: Msg): string;
 }
 export {};
-//# sourceMappingURL=NatsListener.d.ts.map

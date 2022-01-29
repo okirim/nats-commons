@@ -11,4 +11,3 @@ export declare abstract class NatsPublisher<T extends Event> {
     publish(data: T['data']): Promise<void>;
 }
 export {};
-//# sourceMappingURL=NatsPublisher.d.ts.map
