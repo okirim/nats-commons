@@ -2,7 +2,7 @@ import { connect, NatsConnection } from "nats";
 
 class Nats {
     protected servers = ['http://nats:4222']
-    protected client: any
+    protected client
 
     get nats(): NatsConnection {
         if (!this.client) {

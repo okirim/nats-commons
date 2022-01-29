@@ -13,7 +13,7 @@ export abstract class NatsListener<T extends Event> {
     // abstract onMessage(data: T['data'], msg: Msg): void;
     protected client: NatsConnection;
     // protected ackWait = 5 * 1000;
-    protected subscription: Subscription | null = null
+    protected subscription: Subscription
 
     constructor(client: NatsConnection) {
         this.client = client;
