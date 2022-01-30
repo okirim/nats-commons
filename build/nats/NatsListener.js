@@ -8,7 +8,7 @@ var NatsListener = /** @class */ (function () {
     }
     NatsListener.prototype.listen = function (subject) {
         var _this = this;
-        console.log('listen to ', subject);
+        console.log('listen to ', JSON.stringify(subject));
         return new Promise(function (resolve, reject) {
             try {
                 var subscription = _this.client.subscribe(subject, { queue: _this.queueGroupName });

@@ -13,7 +13,7 @@ export abstract class NatsListener {
     }
 
     listen(subject: NatsSubject): Promise<Subscription> {
-        console.log('listen to ', subject)
+        console.log('listen to ', JSON.stringify(subject))
         return new Promise((resolve, reject) => {
             try {
                 const subscription = this.client.subscribe(
