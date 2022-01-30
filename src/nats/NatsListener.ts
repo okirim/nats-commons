@@ -1,5 +1,6 @@
 import { NatsConnection, Msg, StringCodec, Subscription } from 'nats';
 import { QUEUE_GROUPS } from './groups';
+import { NatsSubject } from './subjects';
 
 
 export abstract class NatsListener {
@@ -11,7 +12,7 @@ export abstract class NatsListener {
         this.client = client;
     }
 
-    listen(subject: string): Promise<Subscription> {
+    listen(subject: NatsSubject): Promise<Subscription> {
         console.log('listen to ', subject)
         return new Promise((resolve, reject) => {
             try {
