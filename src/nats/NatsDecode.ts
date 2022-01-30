@@ -1,6 +1,6 @@
 import { StringCodec, Msg } from "nats";
 
-class NatsDecode {
+export class NatsDecode {
     public static string_codec = StringCodec();
     public static decodeMessage(msg: Uint8Array) {
         const message = NatsDecode.string_codec.decode(msg)
