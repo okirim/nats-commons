@@ -13,3 +13,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./nats/NatsPublisher"), exports);
 __exportStar(require("./nats/subjects"), exports);
 __exportStar(require("./nats/listeners/UserListener"), exports);
+__exportStar(require("./nats/NatsDecode"), exports);

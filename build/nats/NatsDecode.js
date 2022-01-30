@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.NatsDecode = void 0;
 var nats_1 = require("nats");
 var NatsDecode = /** @class */ (function () {
     function NatsDecode() {
@@ -15,3 +16,4 @@ var NatsDecode = /** @class */ (function () {
     NatsDecode.string_codec = (0, nats_1.StringCodec)();
     return NatsDecode;
 }());
+exports.NatsDecode = NatsDecode;
