@@ -1,19 +1,11 @@
-
-import { NatsSubject } from './subjects';
 import { NatsConnection, Msg, StringCodec, Subscription } from 'nats';
+import { QUEUE_GROUPS } from './groups';
 
-// interface Event {
-//     subject: NatsSubject;
-//     data: any;
-// }
 
-export class NatsListener {
-    //abstract subject: T['subject'];
-    //abstract queueGroupName: string;
-    queueGroupName: string = 'default-group';
-    // abstract onMessage(data: T['data'], msg: Msg): void;
+export abstract class NatsListener {
+    abstract queueGroupName: QUEUE_GROUPS
     protected client: NatsConnection;
-    // protected ackWait = 5 * 1000;
+
 
     constructor(client: NatsConnection) {
         this.client = client;
@@ -35,8 +27,12 @@ export class NatsListener {
     }
 
 }
-export const decodeMessage = (msg: Msg) => {
-    const string_codec = StringCodec();
+const string_codec = StringCodec();
+export const decodeMessage = (msg: Uint8Array) => {
+    const message = string_codec.decode(msg)
+    return message
+}
+export const getData = (msg: Msg) => {
     const data = string_codec.decode(msg.data)
     return data
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@lamaii/commons-nats",
+  "name": "@miriko/commons-nats",
   "version": "1.0.5",
   "description": "",
   "main": "./build/index.js",
@@ -8,7 +8,7 @@
     "clean": "del-cli ./build/*",
     "build": "npm run clean && tsc",
     "before:pub": "npm version patch",
-    "pub": "npm publish --access public"
+    "pub": "npm publish --scope=miriko --access public"
   },
   "keywords": [],
   "author": "",

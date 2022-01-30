@@ -1,22 +1,18 @@
 
 // import { NatsSubject } from './subjects';
 import { NatsConnection, StringCodec, RequestOptions } from 'nats';
+import { NatsSubject } from './subjects';
 
-// interface Event {
-//     subject: NatsSubject;
-//     data: any;
-// }
 
 export class NatsPublisher {
-    //abstract subject: T['subject'];
+
     protected client: NatsConnection;
 
     constructor(client: NatsConnection) {
         this.client = client;
     }
-
-    publish(subject: string, data: Record<string, any>): Promise<void> {
-        console.log('event published!! ', subject)
+    publish<T>(subject: NatsSubject, data: T): Promise<void> {
+        console.log('event published: ', subject.toString())
         const string_codec = StringCodec();
         //const requestOptions:RequestOptions ={}
         return new Promise((resolve, reject) => {

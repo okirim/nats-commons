@@ -1,3 +1,5 @@
 export enum NatsSubject {
-    TEST_CREATE_USER = 'create new user'
+    CREATE_USER = 'CREATE_USER',
+    UPDATE_USER = 'UPDATE_USER',
+    DELETE_USER = 'DELETE_USER',
 }

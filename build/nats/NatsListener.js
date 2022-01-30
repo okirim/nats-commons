@@ -1,17 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.decodeMessage = exports.NatsListener = void 0;
+exports.getData = exports.decodeMessage = exports.NatsListener = void 0;
 var nats_1 = require("nats");
-// interface Event {
-//     subject: NatsSubject;
-//     data: any;
-// }
 var NatsListener = /** @class */ (function () {
-    // protected ackWait = 5 * 1000;
     function NatsListener(client) {
-        //abstract subject: T['subject'];
-        //abstract queueGroupName: string;
-        this.queueGroupName = 'default-group';
         this.client = client;
     }
     NatsListener.prototype.listen = function (subject) {
@@ -30,9 +22,14 @@ var NatsListener = /** @class */ (function () {
     return NatsListener;
 }());
 exports.NatsListener = NatsListener;
+var string_codec = (0, nats_1.StringCodec)();
 var decodeMessage = function (msg) {
-    var string_codec = (0, nats_1.StringCodec)();
+    var message = string_codec.decode(msg);
+    return message;
+};
+exports.decodeMessage = decodeMessage;
+var getData = function (msg) {
     var data = string_codec.decode(msg.data);
     return data;
 };
-exports.decodeMessage = decodeMessage;
+exports.getData = getData;

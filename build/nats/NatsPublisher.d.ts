@@ -1,6 +1,7 @@
 import { NatsConnection } from 'nats';
+import { NatsSubject } from './subjects';
 export declare class NatsPublisher {
     protected client: NatsConnection;
     constructor(client: NatsConnection);
-    publish(subject: string, data: Record<string, any>): Promise<void>;
+    publish<T>(subject: NatsSubject, data: T): Promise<void>;
 }
