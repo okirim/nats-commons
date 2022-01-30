@@ -15,16 +15,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserListener = void 0;
+exports.AuthListener = void 0;
 var groups_1 = require("../groups");
 var NatsListener_1 = require("../NatsListener");
-var UserListener = /** @class */ (function (_super) {
-    __extends(UserListener, _super);
-    function UserListener() {
+var AuthListener = /** @class */ (function (_super) {
+    __extends(AuthListener, _super);
+    function AuthListener() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.queueGroupName = groups_1.QUEUE_GROUPS.USER_GROUP;
+        _this.queueGroupName = groups_1.QUEUE_GROUPS.AUTH_GROUP;
         return _this;
     }
-    return UserListener;
+    return AuthListener;
 }(NatsListener_1.NatsListener));
-exports.UserListener = UserListener;
+exports.AuthListener = AuthListener;
